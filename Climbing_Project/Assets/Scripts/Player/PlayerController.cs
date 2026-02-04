@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 movementInput;
-    public float walkSpeed = 60f, jumpForce = 60f, maxWalkSpeed = 5f;
+    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f;
+    private float gravity;
     private Rigidbody2D rb;
+    private Collider2D col;
     public LayerMask jumpableSurfaces;
-    bool isJumping;
+    bool isJumping, isClimbing, canClimb;
 
     public bool hasGrapple;
     GameObject grapple;
@@ -18,9 +20,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
 
         grapple = transform.GetChild(0).gameObject;
         mainCam = Camera.main;
+
+        gravity = rb.gravityScale;
     }
 
     private void Update()
@@ -31,9 +36,9 @@ public class PlayerController : MonoBehaviour
         walkForce = walkForce.normalized * walkSpeed;
 
         //if speed is less than max speed...
-        if (Mathf.Abs(rb.linearVelocity.x) < maxWalkSpeed
+        if (!isClimbing && (Mathf.Abs(rb.linearVelocity.x) < maxWalkSpeed
         //...or the two x values are opposing...
-            || rb.linearVelocity.x * walkForce.x <= 0)
+            || rb.linearVelocity.x * walkForce.x <= 0))
         {
             //...then input is accepted
             rb.AddForce(walkForce);
@@ -68,7 +73,37 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        grapple.SetActive(hasGrapple);
+        //climbing
+
+        
+
+        //determine if the character is climbing via a toggle. Jumping escapes the climb
+
+        if(canClimb && movementInput.y >= 0.5f)
+        {
+            if(!isClimbing) rb.linearVelocity = Vector2.zero;
+
+            isClimbing = true;
+            isJumping = false;
+            
+        }
+
+        if (!canClimb || isJumping)
+        {
+            isClimbing = false;
+        }
+
+        if (isClimbing)
+        {
+            rb.gravityScale = 0f;
+            rb.MovePosition(transform.position + (Vector3)movementInput * climbSpeed * Time.deltaTime);
+        }
+        else
+        {
+            rb.gravityScale = gravity;
+        }
+            //grappling is handled by a script attached to this gameobject
+            grapple.SetActive(hasGrapple);
         
 
     }
@@ -90,5 +125,17 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        canClimb = collision.CompareTag("Climbable");
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        canClimb = false;
     }
 }
