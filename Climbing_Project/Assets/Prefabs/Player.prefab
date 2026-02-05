@@ -319,7 +319,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 4
+  m_LinearDamping: 0.8
   m_AngularDamping: 0.05
   m_GravityScale: 1.5
   m_Material: {fileID: 6200000, guid: 97f95c3c24d88fd4f9b07394d4cf18b1, type: 2}
@@ -350,6 +350,7 @@ MonoBehaviour:
   jumpForce: 8
   climbSpeed: 6
   maxWalkSpeed: 5
+  jumpClimbDelay: 0.5
   jumpableSurfaces:
     serializedVersion: 2
     m_Bits: 8
@@ -568,7 +569,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &9190852760407448534
 GameObject:

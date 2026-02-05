@@ -1,16 +1,18 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     public Vector2 movementInput;
-    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f;
+    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f, jumpClimbDelay;
     private float gravity;
     private Rigidbody2D rb;
     private Collider2D col;
     public LayerMask jumpableSurfaces;
-    bool isJumping, isClimbing, canClimb;
+    bool isJumping, isClimbing, canClimb, isDelayed;
+   
 
     public bool hasGrapple;
     GameObject grapple;
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
         if (isJumping)
         {
             
-            RaycastHit2D hit = Physics2D.BoxCast(transform.position, transform.localScale, 0f, Vector2.down, 0.1f, jumpableSurfaces);
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, transform.localScale * 0.95f, 0f, Vector2.down, 0.1f, jumpableSurfaces);
 
             if (hit)
             {
@@ -70,6 +72,19 @@ public class PlayerController : MonoBehaviour
                 }
                 isJumping = false;
 
+            }
+            else if (isClimbing)
+            {
+                isClimbing = false;
+                isJumping = false;
+                StartCoroutine(ClimbDelay());
+                if (movementInput.y > -0.5)
+                {
+                    rb.linearVelocityY = 0;
+                    rb.AddForceY(jumpForce, ForceMode2D.Impulse);
+                }
+                
+                
             }
         }
 
@@ -96,16 +111,17 @@ public class PlayerController : MonoBehaviour
         if (isClimbing)
         {
             rb.gravityScale = 0f;
-            rb.MovePosition(transform.position + (Vector3)movementInput * climbSpeed * Time.deltaTime);
+            rb.MovePosition(transform.position + (Vector3)movementInput * (climbSpeed / 60f));
         }
         else
         {
             rb.gravityScale = gravity;
         }
-            //grappling is handled by a script attached to this gameobject
+            //grappling is handled by an object childed to this gameobject
             grapple.SetActive(hasGrapple);
         
-
+        
+        
     }
 
     public void GetMovementInput(InputAction.CallbackContext context)
@@ -130,7 +146,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        canClimb = collision.CompareTag("Climbable");
+        if(!isDelayed) canClimb = collision.CompareTag("Climbable");
         
     }
 
@@ -138,4 +154,13 @@ public class PlayerController : MonoBehaviour
     {
         canClimb = false;
     }
+
+    IEnumerator ClimbDelay()
+    {
+        isDelayed = true;
+        canClimb = false;
+        yield return new WaitForSeconds(jumpClimbDelay);
+        isDelayed = false;
+    }
+
 }
