@@ -2,15 +2,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public Vector2 movementInput;
-    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f, jumpClimbDelay;
+    private Vector2 respawnPoint;
+    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f, jumpClimbDelay, deathDelay;
     private float gravity;
     private Rigidbody2D rb;
     private Collider2D col;
-    public LayerMask jumpableSurfaces;
+    public LayerMask jumpableSurfaces, climbableSurfaces;
     bool isJumping, isClimbing, canClimb, isDelayed;
    
 
@@ -18,6 +20,8 @@ public class PlayerController : MonoBehaviour
     GameObject grapple;
 
     Camera mainCam;
+
+    LevelLoader ll;
 
     private void Start()
     {
@@ -28,6 +32,10 @@ public class PlayerController : MonoBehaviour
         mainCam = Camera.main;
 
         gravity = rb.gravityScale;
+
+        respawnPoint = Vector2.zero;
+
+        ll = GameObject.FindWithTag("LevelLoader").GetComponent<LevelLoader>();
     }
 
     private void Update()
@@ -49,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if (isJumping)
         {
             
-            RaycastHit2D hit = Physics2D.BoxCast(transform.position, transform.localScale * 0.95f, 0f, Vector2.down, 0.1f, jumpableSurfaces);
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, transform.localScale * 0.85f, 0f, Vector2.down, 0.1f, jumpableSurfaces);
 
             if (hit)
             {
@@ -124,6 +132,8 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    
+
     public void GetMovementInput(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
@@ -143,6 +153,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Hazard"))
+        {
+            StartCoroutine(Death());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Checkpoint"))
+        {
+            respawnPoint = collision.transform.position;
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
 
@@ -152,8 +179,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canClimb = false;
+        if(!col.IsTouchingLayers(climbableSurfaces))
+            canClimb = false;
+        
     }
+
+    
 
     IEnumerator ClimbDelay()
     {

@@ -2,6 +2,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class LevelLoader : MonoBehaviour
 
 
     }
+
+
 
     public void New()
     {

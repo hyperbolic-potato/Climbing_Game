@@ -354,6 +354,9 @@ MonoBehaviour:
   jumpableSurfaces:
     serializedVersion: 2
     m_Bits: 8
+  climbableSurfaces:
+    serializedVersion: 2
+    m_Bits: 128
   hasGrapple: 0
 --- !u!114 &6361808227703504426
 MonoBehaviour:
