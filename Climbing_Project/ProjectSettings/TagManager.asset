@@ -9,6 +9,7 @@ TagManager:
   - Passthrough
   - Checkpoint
   - Hazard
+  - Victory
   layers:
   - Default
   - TransparentFX

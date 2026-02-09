@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D col;
     public LayerMask jumpableSurfaces, climbableSurfaces;
-    bool isJumping, isClimbing, canClimb, isDelayed, isDead;
+    bool isJumping, isClimbing, canClimb, isDelayed, isDead, hasWon;
    
 
     public bool hasGrapple;
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         mainCam = Camera.main;
 
         gravity = rb.gravityScale;
+        
 
         ll = GameObject.FindWithTag("LevelLoader").GetComponent<LevelLoader>();
         transform.position = ll.respawnPos;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead)
+        if (!(isDead || hasWon))
         {
 
 
@@ -168,6 +169,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Victory()
+    {
+        //this is pure fun
+        hasWon = true;
+        rb.linearVelocity = Vector2.up * 7f;
+        rb.gravityScale = 0f;
+        gravity = 0f;
+        GetComponent<SpriteRenderer>().color = Color.green;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Hazard"))
@@ -182,6 +193,10 @@ public class PlayerController : MonoBehaviour
         {
             ll.respawnPos = collision.transform.position;
             Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("Victory"))
+        {
+            Victory();
         }
     }
 
