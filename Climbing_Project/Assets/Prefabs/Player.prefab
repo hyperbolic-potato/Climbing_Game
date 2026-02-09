@@ -351,6 +351,7 @@ MonoBehaviour:
   climbSpeed: 6
   maxWalkSpeed: 5
   jumpClimbDelay: 0.5
+  deathDelay: 1.5
   jumpableSurfaces:
     serializedVersion: 2
     m_Bits: 8

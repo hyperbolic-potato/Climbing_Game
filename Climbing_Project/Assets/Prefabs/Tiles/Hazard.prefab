@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2155277954929108587}
   m_Layer: 3
   m_Name: Hazard
-  m_TagString: Climbable
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

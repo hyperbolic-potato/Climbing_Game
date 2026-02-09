@@ -11,6 +11,8 @@ public class LevelLoader : MonoBehaviour
     public SaveData currentSaveData;
     public static LevelLoader instance;
 
+    public Vector2 respawnPos = Vector2.zero;
+
 
     private void Start()
     {
@@ -92,5 +94,10 @@ public class LevelLoader : MonoBehaviour
     public void LoadLevel(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void Checkpoint(Vector2 checkpointPos)
+    {
+        respawnPos = checkpointPos;
     }
 }

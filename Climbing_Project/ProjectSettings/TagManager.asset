@@ -8,6 +8,7 @@ TagManager:
   - Climbable
   - Passthrough
   - Checkpoint
+  - Hazard
   layers:
   - Default
   - TransparentFX
