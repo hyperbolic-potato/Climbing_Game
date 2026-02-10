@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc2acaac6c5d45c9b52f770dfd9e6bfb, type: 3}
-  m_Name: help
+  m_Name: redAuto
   m_EditorClassIdentifier: 
   width: 160
   height: 80
@@ -157,12 +157,3 @@ MonoBehaviour:
   - x: 96
     y: 0
     mask: 187
-  - x: 112
-    y: 0
-    mask: 511
-  - x: 128
-    y: 0
-    mask: 511
-  - x: 144
-    y: 0
-    mask: 511
