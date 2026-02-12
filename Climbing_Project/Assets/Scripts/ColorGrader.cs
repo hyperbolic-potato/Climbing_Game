@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 
 public class ColorGrader : MonoBehaviour
@@ -42,8 +40,7 @@ public class ColorGrader : MonoBehaviour
 
 
 
-        foreground.color = AverageColors(environmentColor, baseForegroundColor, foregroundWeight);
-        background.color = AverageColors(environmentColor, baseBackgroundColor, backgroundWeight);
+        
     }
     //a very ad-hoc weighted average function that returns a color along the line intersecting two other colors
     Color AverageColors(Color a, Color b, float weight)

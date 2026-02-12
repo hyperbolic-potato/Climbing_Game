@@ -131,11 +131,14 @@ public class PlayerController : MonoBehaviour
             }
             //grappling is handled by an object childed to this gameobject
             grapple.SetActive(hasGrapple);
-
             //ground friction
-            if (isGrounded)
+            if (isGrounded && (movementInput.x == 0f || rb.linearVelocity.x * movementInput.x <= 0))
             {
-                //rb.sharedMaterial.friction =
+                rb.linearDamping = 8f;
+            }
+            else
+            {
+                rb.linearDamping = 0f;
             }
         }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HazardTile
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 658958708, guid: 2087f2fcabdb6e74984e6e8f2cd0e195, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.3066038, b: 0.3066038, a: 1}
   m_Transform:
     e00: 1
     e01: 0
