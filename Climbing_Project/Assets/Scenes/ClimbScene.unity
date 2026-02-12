@@ -3474,7 +3474,7 @@ Tilemap:
   - m_RefCount: 180
     m_Data: {fileID: 4818891421085015551, guid: a3f4ecc7a2033124ead1d2c9d56b757b, type: 3}
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.33641866, g: 0.4751818, b: 0.6792453, a: 1}
+  m_Color: {r: 0.35056958, g: 0.5055671, b: 0.735849, a: 1}
   m_Origin: {x: -12, y: -34, z: 0}
   m_Size: {x: 66, y: 69, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -8855,18 +8855,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2275391107380598985, guid: 77eca7fbf30af774ca90279be8d5a5a5, type: 3}
-      propertyPath: climbSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2275391107380598985, guid: 77eca7fbf30af774ca90279be8d5a5a5, type: 3}
-      propertyPath: jumpableSurfaces.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6799057858327248652, guid: 77eca7fbf30af774ca90279be8d5a5a5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6849679165191094844, guid: 77eca7fbf30af774ca90279be8d5a5a5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8886,6 +8874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342259626}
   - component: {fileID: 1342259625}
+  - component: {fileID: 1342259627}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -8922,6 +8911,53 @@ Transform:
   - {fileID: 804654444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342259627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342259624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fb5bf35ab27f94e87baf041ecb36e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorGradient:
+    serializedVersion: 2
+    key0: {r: 0.36862746, g: 0.29803923, b: 0.14117648, a: 1}
+    key1: {r: 0.23139909, g: 0.754717, b: 0.44202465, a: 1}
+    key2: {r: 0.23137257, g: 0.75294125, b: 0.4431373, a: 0}
+    key3: {r: 0.54509807, g: 0.52156866, b: 0.9960785, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 19853
+    ctime1: 24479
+    ctime2: 33924
+    ctime3: 49537
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
+  environmentColor: {r: 0, g: 0, b: 0, a: 1}
+  baseForegroundColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+  baseBackgroundColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
+  foregroundWeight: 0.1
+  backgroundWeight: 0.8
 --- !u!1 &2196213050498926866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4691507784326716867, guid: 13d9e37e2d3349440b6d7100001496e1, type: 3}

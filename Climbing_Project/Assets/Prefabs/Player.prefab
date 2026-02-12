@@ -295,7 +295,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -320,7 +320,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0.5
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 97f95c3c24d88fd4f9b07394d4cf18b1, type: 2}
@@ -347,10 +347,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementInput: {x: 0, y: 0}
-  walkSpeed: 8.5
-  jumpForce: 18
+  walkSpeed: 15
+  jumpForce: 23.5
   climbSpeed: 6
-  maxWalkSpeed: 7
+  maxWalkSpeed: 15
   jumpClimbDelay: 0.5
   deathDelay: 1.5
   jumpableSurfaces:
