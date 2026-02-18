@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D col;
     public LayerMask jumpableSurfaces, climbableSurfaces;
-    bool isJumping, isGrounded, isClimbing, canClimb, isDelayed, isDead, hasWon;
+    bool isJumping, isGrounded, isClimbing, canClimb, isDelayed, isDead, hasWon, wasClimbing;
    
 
     public bool hasGrapple;
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
                     }
                     isJumping = false;
                 }
-                else if (isClimbing)
+                else if (isClimbing || wasClimbing)
                 {
                     isClimbing = false;
                     isJumping = false;
@@ -129,8 +129,10 @@ public class PlayerController : MonoBehaviour
             {
                 rb.gravityScale = gravity;
             }
+
             //grappling is handled by an object childed to this gameobject
             grapple.SetActive(hasGrapple);
+
             //ground friction
             if (isGrounded && (movementInput.x == 0f || rb.linearVelocity.x * movementInput.x <= 0))
             {
@@ -219,12 +221,22 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!col.IsTouchingLayers(climbableSurfaces))
+        if (!col.IsTouchingLayers(climbableSurfaces))
+        {
             canClimb = false;
+            StartCoroutine(ClimbJumpGrace());
+        }
+            
         
     }
 
-    
+    IEnumerator ClimbJumpGrace()
+    {
+        wasClimbing = true;
+        yield return new WaitForSeconds(0.05f);
+        wasClimbing = false;
+
+    }
 
     IEnumerator ClimbDelay()
     {
