@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 4481034099407360976}
   - component: {fileID: 2275391107380598985}
   - component: {fileID: 6361808227703504426}
-  - component: {fileID: 8430512277562063609}
+  - component: {fileID: 1799868258067434361}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -320,7 +320,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2
+  m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 97f95c3c24d88fd4f9b07394d4cf18b1, type: 2}
@@ -332,7 +332,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2275391107380598985
 MonoBehaviour:
@@ -347,12 +347,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementInput: {x: 0, y: 0}
-  walkSpeed: 15
-  jumpForce: 23.5
+  walkSpeed: 9
+  jumpForce: 19
   climbSpeed: 6
-  maxWalkSpeed: 15
+  maxWalkSpeed: 9
   jumpClimbDelay: 0.5
   deathDelay: 1.5
+  walkDecceleration: 0.5
+  jumpDecceleration: 0.95
   jumpableSurfaces:
     serializedVersion: 2
     m_Bits: 8
@@ -530,7 +532,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!61 &8430512277562063609
+--- !u!61 &1799868258067434361
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -540,7 +542,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 97f95c3c24d88fd4f9b07394d4cf18b1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -574,8 +576,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.75, y: 0.75}
+  m_EdgeRadius: 0.125
 --- !u!1 &8992426422813541182
 GameObject:
   m_ObjectHideFlags: 0

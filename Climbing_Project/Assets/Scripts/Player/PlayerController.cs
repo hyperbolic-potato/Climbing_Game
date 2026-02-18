@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 movementInput;
-    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f, jumpClimbDelay, deathDelay;
+    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f, jumpClimbDelay, deathDelay, walkDecceleration, jumpDecceleration;
     private float gravity;
     private Rigidbody2D rb;
     private Collider2D col;
     public LayerMask jumpableSurfaces, climbableSurfaces;
-    bool isJumping, isGrounded, isClimbing, canClimb, isDelayed, isDead, hasWon;
+    bool isJumping, isGrounded, isClimbing, canClimb, isDelayed, isDead, hasWon, wasClimbing;
    
 
     public bool hasGrapple;
@@ -83,12 +83,10 @@ public class PlayerController : MonoBehaviour
                         //prevents the player from flying via rigidbody abuse
 
                     }
-                    isJumping = false;
                 }
-                else if (isClimbing)
+                else if (isClimbing || wasClimbing)
                 {
                     isClimbing = false;
-                    isJumping = false;
                     StartCoroutine(ClimbDelay());
                     if (movementInput.y > -0.5)
                     {
@@ -98,6 +96,13 @@ public class PlayerController : MonoBehaviour
 
 
                 }
+
+
+            }
+
+            if(!isJumping && rb.linearVelocityY > 0f)
+            {
+                rb.linearVelocityY *= jumpDecceleration;
             }
 
             //climbing
@@ -106,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
             //determine if the character is climbing via a toggle. Jumping escapes the climb
 
-            if (canClimb && movementInput.y >= 0.5f)
+            if (canClimb && (movementInput.y >= 0.5f || wasClimbing))
             {
                 if (!isClimbing) rb.linearVelocity = Vector2.zero;
 
@@ -129,13 +134,14 @@ public class PlayerController : MonoBehaviour
             {
                 rb.gravityScale = gravity;
             }
+
             //grappling is handled by an object childed to this gameobject
             grapple.SetActive(hasGrapple);
 
             //ground friction
-            if (isGrounded)
+            if (isGrounded && (movementInput.x == 0f || rb.linearVelocity.x * movementInput.x <= 0))
             {
-                //rb.sharedMaterial.friction =
+                rb.linearVelocityX *= walkDecceleration;
             }
         }
 
@@ -196,6 +202,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!isDelayed) canClimb = collision.CompareTag("Climbable");
+
         if (collision.CompareTag("Checkpoint"))
         {
             ll.respawnPos = collision.transform.position;
@@ -210,18 +218,32 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if(!isDelayed) canClimb = collision.CompareTag("Climbable");
+        
         
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!col.IsTouchingLayers(climbableSurfaces))
+        if (!col.IsTouchingLayers(climbableSurfaces))
+        {
             canClimb = false;
+            if(isClimbing) StartCoroutine(ClimbJumpGrace());
+        }
+            
         
     }
 
-    
+    IEnumerator ClimbJumpGrace()
+    {
+        wasClimbing = true;
+        yield return new WaitForSeconds(0.05f);
+        while (rb.linearVelocityY < 0)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        wasClimbing = false;
+
+    }
 
     IEnumerator ClimbDelay()
     {
