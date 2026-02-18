@@ -1,9 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem.Processors;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D col;
     public LayerMask jumpableSurfaces, climbableSurfaces;
-    bool isJumping, isClimbing, canClimb, isDelayed, isDead, hasWon;
+    bool isJumping, isGrounded, isClimbing, canClimb, isDelayed, isDead, hasWon;
    
 
     public bool hasGrapple;
@@ -43,7 +41,12 @@ public class PlayerController : MonoBehaviour
     {
         if (!(isDead || hasWon))
         {
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, transform.localScale * 0.85f, 0f, Vector2.down, 0.1f, jumpableSurfaces);
+            
+            
+            isGrounded = hit;
 
+            
 
             //walking left & right
             Vector2 walkForce = Vector2.zero;
@@ -61,10 +64,7 @@ public class PlayerController : MonoBehaviour
             //jumping
             if (isJumping)
             {
-
-                RaycastHit2D hit = Physics2D.BoxCast(transform.position, transform.localScale * 0.85f, 0f, Vector2.down, 0.1f, jumpableSurfaces);
-
-                if (hit)
+                if (isGrounded)
                 {
                     //rb.linearVelocityY = 0;
                     //im sure this isn't going to be complicit in some game-breaking physics exploits...
@@ -84,7 +84,6 @@ public class PlayerController : MonoBehaviour
 
                     }
                     isJumping = false;
-
                 }
                 else if (isClimbing)
                 {
@@ -100,39 +99,50 @@ public class PlayerController : MonoBehaviour
 
                 }
             }
-        }
 
-        //climbing
+            //climbing
 
-        
 
-        //determine if the character is climbing via a toggle. Jumping escapes the climb
 
-        if(canClimb && movementInput.y >= 0.5f)
-        {
-            if(!isClimbing) rb.linearVelocity = Vector2.zero;
+            //determine if the character is climbing via a toggle. Jumping escapes the climb
 
-            isClimbing = true;
-            isJumping = false;
-            
-        }
+            if (canClimb && movementInput.y >= 0.5f)
+            {
+                if (!isClimbing) rb.linearVelocity = Vector2.zero;
 
-        if (!canClimb || isJumping)
-        {
-            isClimbing = false;
-        }
+                isClimbing = true;
+                isJumping = false;
 
-        if (isClimbing)
-        {
-            rb.gravityScale = 0f;
-            rb.MovePosition(transform.position + (Vector3)movementInput * (climbSpeed / 60f));
-        }
-        else
-        {
-            rb.gravityScale = gravity;
-        }
+            }
+
+            if (!canClimb || isJumping)
+            {
+                isClimbing = false;
+            }
+
+            if (isClimbing)
+            {
+                rb.gravityScale = 0f;
+                rb.MovePosition(transform.position + (Vector3)movementInput * (climbSpeed / 60f));
+            }
+            else
+            {
+                rb.gravityScale = gravity;
+            }
             //grappling is handled by an object childed to this gameobject
             grapple.SetActive(hasGrapple);
+            //ground friction
+            if (isGrounded && (movementInput.x == 0f || rb.linearVelocity.x * movementInput.x <= 0))
+            {
+                rb.linearDamping = 8f;
+            }
+            else
+            {
+                rb.linearDamping = 0f;
+            }
+        }
+
+        
         
         
         
