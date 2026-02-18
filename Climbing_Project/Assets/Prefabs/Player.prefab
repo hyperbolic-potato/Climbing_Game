@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementInput: {x: 0, y: 0}
   walkSpeed: 9
-  jumpForce: 16
+  jumpForce: 19
   climbSpeed: 6
   maxWalkSpeed: 9
   jumpClimbDelay: 0.5
