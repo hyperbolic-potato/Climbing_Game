@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 movementInput;
-    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f, jumpClimbDelay, deathDelay, walkDecceleration, jumpDecceleration;
-    private float gravity;
+    public float walkSpeed = 60f, jumpForce = 60f, climbSpeed, maxWalkSpeed = 5f, jumpClimbDelay, deathDelay, walkDecceleration, jumpDecceleration, lethalFallDistance;
+    private float gravity, fallDistance;
     private Rigidbody2D rb;
     private Collider2D col;
     public LayerMask jumpableSurfaces, climbableSurfaces;
@@ -142,6 +142,13 @@ public class PlayerController : MonoBehaviour
             if (isGrounded && (movementInput.x == 0f || rb.linearVelocity.x * movementInput.x <= 0))
             {
                 rb.linearVelocityX *= walkDecceleration;
+            }
+
+            //fatal falls
+
+            if (rb.linearVelocityY < 0f)
+            {
+                //TODO: THIS
             }
         }
 
