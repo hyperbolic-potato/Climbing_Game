@@ -351,7 +351,7 @@ MonoBehaviour:
   jumpForce: 19
   climbSpeed: 6
   maxWalkSpeed: 9
-  jumpClimbDelay: 0.5
+  jumpClimbDelay: 0.15
   deathDelay: 1.5
   walkDecceleration: 0.5
   jumpDecceleration: 0.95
