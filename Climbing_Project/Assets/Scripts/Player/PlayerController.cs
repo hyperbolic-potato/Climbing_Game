@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             //jumping
             if (isJumping)
             {
-                if (isGrounded)
+                if (isGrounded && rb.linearVelocityY <= 0)
                 {
                     //rb.linearVelocityY = 0;
                     //im sure this isn't going to be complicit in some game-breaking physics exploits...
