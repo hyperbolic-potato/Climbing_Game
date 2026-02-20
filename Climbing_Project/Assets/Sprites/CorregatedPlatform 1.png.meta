@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 1b0dde07c2fadfc49bdd03eb1921d8cc
+guid: 445162d479f5c054bb2f26788c825184
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3549661936132222141
-    second: Crates-1.png (1)_0
+      213: -3837078572890366770
+    second: CorregatedPlatform 1_0
+  - first:
+      213: -4786484358097763495
+    second: CorregatedPlatform 1_1
+  - first:
+      213: 1994796096110426541
+    second: CorregatedPlatform 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +52,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crates-1.png (1)_0
+      name: CorregatedPlatform 1_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 199
-        width: 522
-        height: 242
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3431d18a6411dbec0800000000000000
-      internalID: -3549661936132222141
+      spriteID: ecc5b9f1e55ffbac0800000000000000
+      internalID: -3837078572890366770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorregatedPlatform 1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9538e9016ddf29db0800000000000000
+      internalID: -4786484358097763495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorregatedPlatform 1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da97ff30b70feab10800000000000000
+      internalID: 1994796096110426541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorregatedPlatform 1_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8d9c3d60b4188468a5b1096a9bc421
+      internalID: -163473895
       vertices: []
       indices: 
       edges: []
@@ -125,7 +197,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4589d81e744e92444a45184790a68777
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +205,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Crates-1.png (1)_0: -3549661936132222141
+      CorregatedPlatform 1_0: -3837078572890366770
+      CorregatedPlatform 1_1: -4786484358097763495
+      CorregatedPlatform 1_2: 1994796096110426541
+      CorregatedPlatform 1_3: -163473895
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

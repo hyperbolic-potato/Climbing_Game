@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1b0dde07c2fadfc49bdd03eb1921d8cc
+guid: 2b188e06d75f099458c023adbd9d1e1c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3549661936132222141
-    second: Crates-1.png (1)_0
+      213: -4704511360529258867
+    second: MossyMetalBlock-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crates-1.png (1)_0
+      name: MossyMetalBlock-1.png_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 199
-        width: 522
-        height: 242
+        x: 0
+        y: 0
+        width: 640
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3431d18a6411dbec0800000000000000
-      internalID: -3549661936132222141
+      spriteID: d862dd9d7d736beb0800000000000000
+      internalID: -4704511360529258867
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Crates-1.png (1)_0: -3549661936132222141
+      MossyMetalBlock-1.png_0: -4704511360529258867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

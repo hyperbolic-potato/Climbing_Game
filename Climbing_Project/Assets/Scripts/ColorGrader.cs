@@ -37,7 +37,8 @@ public class ColorGrader : MonoBehaviour
 
         Camera.main.backgroundColor = environmentColor;
 
-
+        background.color = AverageColors(environmentColor, baseBackgroundColor, backgroundWeight);
+        foreground.color = AverageColors(environmentColor, baseForegroundColor, foregroundWeight);
 
 
         
