@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1b0dde07c2fadfc49bdd03eb1921d8cc
+guid: c148c1a47bef3e643ae993f0b768d481
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3549661936132222141
-    second: Crates-1.png (1)_0
+      213: -151030103029782486
+    second: GrassySide.Platform-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crates-1.png (1)_0
+      name: GrassySide.Platform-1.png_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 199
-        width: 522
-        height: 242
+        x: 0
+        y: 319
+        width: 521
+        height: 321
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3431d18a6411dbec0800000000000000
-      internalID: -3549661936132222141
+      spriteID: a28e486ebee67edf0800000000000000
+      internalID: -151030103029782486
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Crates-1.png (1)_0: -3549661936132222141
+      GrassySide.Platform-1.png_0: -151030103029782486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
