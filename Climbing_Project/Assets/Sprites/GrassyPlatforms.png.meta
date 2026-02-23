@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 1a38a3b1c1b26944db62daff85615e15
+guid: b4da637e6a3a77049a723300431e1291
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7400147708876061443
-    second: Ladder-1.png_0
+      213: -145993818075646832
+    second: GrassyPlatforms_0
+  - first:
+      213: 5621527670267623104
+    second: GrassyPlatforms_1
+  - first:
+      213: -2812018557777137118
+    second: GrassyPlatforms_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 320
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ladder-1.png_0
+      name: GrassyPlatforms_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 59
-        width: 302
-        height: 462
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30b7af0322b92b660800000000000000
-      internalID: 7400147708876061443
+      spriteID: 094b23e556359fdf0800000000000000
+      internalID: -145993818075646832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrassyPlatforms_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6b459c1ada30e40800000000000000
+      internalID: 5621527670267623104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrassyPlatforms_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22233e93504b9f8d0800000000000000
+      internalID: -2812018557777137118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrassyPlatforms_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c05b147265b10468c7972ec1b48909
+      internalID: 985092200
       vertices: []
       indices: 
       edges: []
@@ -125,7 +197,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3ea948d67bed84f4797531baeee42c28
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +205,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Ladder-1.png_0: 7400147708876061443
+      GrassyPlatforms_0: -145993818075646832
+      GrassyPlatforms_1: 5621527670267623104
+      GrassyPlatforms_2: -2812018557777137118
+      GrassyPlatforms_3: 985092200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
