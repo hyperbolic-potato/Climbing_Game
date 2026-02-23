@@ -105,6 +105,27 @@ public class PlayerController : MonoBehaviour
                 rb.linearVelocityY *= jumpDecceleration;
             }
 
+            //fatal falls
+
+            if (rb.linearVelocityY < 0f)
+            {
+                fallDistance -= rb.linearVelocityY * Time.deltaTime;
+            }
+            else
+            {
+                
+                if (fallDistance > lethalFallDistance) StartCoroutine(Death());
+                fallDistance = 0f;
+            }
+
+            Debug.Log(fallDistance);
+
+            if (fallDistance > lethalFallDistance)
+            {
+                canClimb = false;
+                
+            }
+
             //climbing
 
 
@@ -144,12 +165,7 @@ public class PlayerController : MonoBehaviour
                 rb.linearVelocityX *= walkDecceleration;
             }
 
-            //fatal falls
-
-            if (rb.linearVelocityY < 0f)
-            {
-                //TODO: THIS
-            }
+            
         }
 
         
