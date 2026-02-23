@@ -355,6 +355,7 @@ MonoBehaviour:
   deathDelay: 1.5
   walkDecceleration: 0.5
   jumpDecceleration: 0.95
+  lethalFallDistance: 16
   jumpableSurfaces:
     serializedVersion: 2
     m_Bits: 8
