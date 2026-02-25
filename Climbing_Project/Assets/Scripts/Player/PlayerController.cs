@@ -118,8 +118,6 @@ public class PlayerController : MonoBehaviour
                 fallDistance = 0f;
             }
 
-            Debug.Log(fallDistance);
-
             if (fallDistance > lethalFallDistance)
             {
                 canClimb = false;
