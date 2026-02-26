@@ -899,7 +899,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[title goes here]'
+  m_text: Geosyc
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e041253878fcf6489003bdfb2bc7fb4, type: 2}
   m_sharedMaterial: {fileID: 2156625658416562604, guid: 5e041253878fcf6489003bdfb2bc7fb4, type: 2}
