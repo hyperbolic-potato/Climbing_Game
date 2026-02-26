@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5453371191461852251}
   - component: {fileID: 5503350244338789050}
   - component: {fileID: 2155277954929108587}
-  - component: {fileID: 2188910540468560444}
+  - component: {fileID: 3124003782601009391}
   m_Layer: 3
   m_Name: Hazard
   m_TagString: Hazard
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4300856301086538278, guid: 1130ba62ccf64c6499c9b37459287ee4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -163,20 +163,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!111 &2188910540468560444
-Animation:
+--- !u!95 &3124003782601009391
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4818891421085015551}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 98e4f598936ee8043964f8db0344d2a8, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 98e4f598936ee8043964f8db0344d2a8, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5968a0a19720a374da69dc8c3a930262, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
-  m_CullingType: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
