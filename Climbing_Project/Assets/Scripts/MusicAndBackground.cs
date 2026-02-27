@@ -34,10 +34,9 @@ public class MusicAndBackground : MonoBehaviour
 
         deltaLevel = level;
 
-        if (level == 0)
-        {
-            StartCoroutine(SongTransition());
-        }
+
+        StartCoroutine(SongTransition());
+        
     }
 
     private void Update()
@@ -65,7 +64,7 @@ public class MusicAndBackground : MonoBehaviour
 
         }
 
-        transform.localPosition = new Vector2(0, -(textureHeight * levelProgressRatio - textureHeight / 2));
+        transform.localPosition = new Vector2(0, -(textureHeight * Mathf.Min(levelProgressRatio, 1f) - textureHeight / 2));
 
         //for music
 
@@ -75,6 +74,7 @@ public class MusicAndBackground : MonoBehaviour
         }
 
         deltaLevel = level;
+
     }  
     
     IEnumerator SongTransition()
