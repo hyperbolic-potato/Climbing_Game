@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
         //death animation/behavior goes here
         isDead = true;
 
-        GetComponent<SpriteRenderer>().color = Color.red;
+        //GetComponent<SpriteRenderer>().color = Color.red;
 
         yield return new WaitForSeconds(deathDelay);
 
