@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: e6724482ee8ac0447af574524bac7d93
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7809740403640703885
+    second: RobotJumpFIN_0
+  - first:
+      213: 5919381677028373288
+    second: RobotJumpFIN_1
+  - first:
+      213: 719109806984189513
+    second: RobotJumpFIN_2
+  - first:
+      213: -2435057474332513494
+    second: RobotJumpFIN_3
+  - first:
+      213: 4734853416784002477
+    second: RobotJumpFIN_4
+  - first:
+      213: 2083613676683512761
+    second: RobotJumpFIN_5
+  - first:
+      213: 2546885069049491196
+    second: RobotJumpFIN_6
+  - first:
+      213: 14954997978504507
+    second: RobotJumpFIN_7
+  - first:
+      213: 8424247888132235973
+    second: RobotJumpFIN_8
+  - first:
+      213: -7126113373800359616
+    second: RobotJumpFIN_9
+  - first:
+      213: 1392992956836920757
+    second: RobotJumpFIN_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RobotJumpFIN_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1055
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b1503f485c16c60800000000000000
+      internalID: 7809740403640703885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1055
+        width: 255
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8237b35e54ed52250800000000000000
+      internalID: 5919381677028373288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_2
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 1055
+        width: 266
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946dac73f8acaf900800000000000000
+      internalID: 719109806984189513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_3
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 703
+        width: 266
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b20cae020f43ed0800000000000000
+      internalID: -2435057474332513494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_4
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 714
+        width: 266
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dad74f2a81495b140800000000000000
+      internalID: 4734853416784002477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_5
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 714
+        width: 244
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbcdd7799b7aec10800000000000000
+      internalID: 2083613676683512761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 384
+        width: 244
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfee070f97a585320800000000000000
+      internalID: 2546885069049491196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 395
+        width: 244
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d102ecd71253000800000000000000
+      internalID: 14954997978504507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_8
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 384
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2e4f712d0f8e470800000000000000
+      internalID: 8424247888132235973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 21
+        width: 255
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049187d64a5fa1d90800000000000000
+      internalID: -7126113373800359616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobotJumpFIN_10
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 255
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdb2eeb6b7e45310800000000000000
+      internalID: 1392992956836920757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RobotJumpFIN_0: 7809740403640703885
+      RobotJumpFIN_1: 5919381677028373288
+      RobotJumpFIN_10: 1392992956836920757
+      RobotJumpFIN_2: 719109806984189513
+      RobotJumpFIN_3: -2435057474332513494
+      RobotJumpFIN_4: 4734853416784002477
+      RobotJumpFIN_5: 2083613676683512761
+      RobotJumpFIN_6: 2546885069049491196
+      RobotJumpFIN_7: 14954997978504507
+      RobotJumpFIN_8: 8424247888132235973
+      RobotJumpFIN_9: -7126113373800359616
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
