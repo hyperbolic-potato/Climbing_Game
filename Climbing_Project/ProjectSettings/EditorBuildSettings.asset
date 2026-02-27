@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d0e6ae2c8a2e992499d8be4ba668154d
   - enabled: 1
+    path: Assets/Scenes/WorldScene.unity
+    guid: a78cd348377b42247a1ba9fed7a15dd2
+  - enabled: 0
     path: Assets/Scenes/ClimbScene.unity
     guid: fe845112c16ee194d87f2636d263f65a
   m_configObjects:
