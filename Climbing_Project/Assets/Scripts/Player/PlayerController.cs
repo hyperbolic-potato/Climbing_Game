@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
 
     LevelLoader ll;
 
+    Animator anim;
+
+    SpriteRenderer sr;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +39,10 @@ public class PlayerController : MonoBehaviour
         ll = GameObject.FindWithTag("LevelLoader").GetComponent<LevelLoader>();
         transform.position = ll.respawnPos;
         isDead = false;
+
+        anim= GetComponent<Animator>();
+
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -165,8 +173,12 @@ public class PlayerController : MonoBehaviour
 
             
         }
-
-        
+        if (isJumping && anim.GetCurrentAnimatorStateInfo(0).GetHashCode() != Animator.StringToHash("Jumping")) anim.Play(Animator.StringToHash("Jumping"));
+        else if (isDead && anim.GetCurrentAnimatorStateInfo(0).GetHashCode() != Animator.StringToHash("Death")) anim.Play(Animator.StringToHash("Death"));
+        else if (movementInput == Vector2.zero && anim.GetCurrentAnimatorStateInfo(0).GetHashCode() != Animator.StringToHash("Idle")) anim.Play(Animator.StringToHash("Idle"));
+        else if (movementInput != Vector2.zero && anim.GetCurrentAnimatorStateInfo(0).GetHashCode() != Animator.StringToHash("Walking")) anim.Play(Animator.StringToHash("Walking"));
+        if (movementInput.x < 0f) sr.flipX = true;
+        else if (movementInput.x >0f) sr.flipX = false;
         
         
         
